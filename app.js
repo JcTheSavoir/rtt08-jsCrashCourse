@@ -2,10 +2,10 @@
 
 const name = 'John';
 const age = 30;
-const rating = 4.5;
-const isCool = true;
-const x = null;
-const y = undefined;
-let z;
 
-// console.log(typeof )
+// Concatenation
+console.log('My name is ' + name + ' and I am ' + age);
+// Template String
+const hello = `My name is ${name} and i am ${age}`;
+
+console.log(hello);
