@@ -1,78 +1,46 @@
-//------------------------------------------LOOPS & HIGH ORDER ARRAY METHODS-------------------------------
+//-------------------------------CONDITIONALS----------------------------------
 
-const todos = [
-    {
-        id: 1,
-        text: 'Take out Trash',
-        isCompleted: true,
-    },
-    {
-        id: 2,
-        text: 'Meeting with boss',
-        isCompleted: true,
-    },
-    {
-        id: 3,
-        text: 'Dentist appt',
-        isCompleted: false,
-    }
-];
+//------if statements
+/* 
+const x = 10;
 
-// For Loops
-for (let i = 0; i <= 10; i++) {
-    console.log(`For Loop Number: ${i}`);
+if(x === 10) {
+    console.log('x is 10')
+} else if(x > 10) {
+    console.log('x is greater than 10')
+}else {
+    console.log('x is less than 10');
+};
+*/
+/*
+const x = 4;
+const y = 10;
+if(x > 5 || y > 10) {
+    console.log('x is more than 5 or y is more than 10')
+} else {
+    console.log('x is less than 5 and y is less than 10')
 }
+*/
 
-//While Loops
-let i = 0;
-while(i < 10) {
-    console.log(`While Loop Numbers: ${i}`);
-    i++;
+/*---Ternary Statement 
+const x = 10;
+    // basically if x > 10, then(represented by the ?) color = red, else (represented by the :) color = blue
+const color = x > 10 ? 'red' : 'blue';
+console.log(color);
+*/
+
+//---Switches
+const x = 11;
+
+const color = x > 10 ? 'red' : 'blue';
+
+switch(color) {
+    case 'red':
+        console.log('color is red');
+        break;
+    case 'blue':
+        console.log('color is blue');
+        break;
+    default:
+        console.log('color is NOT red or blue');
 }
-
-//Loop through Arrays (substandard, better to use the method after this)
-for (let i = 0; i < todos.length; i++) {
-    console.log(todos[i].text);
-}
-
-//For Of Loops
-    // Structure of for of loop below
-    // for(let 'blank' of 'name of array) {}
-for(let todo of todos){
-    console.log(todo);
-    console.log(todo.text);
-    console.log(todo.id) // call whichever one you need/want
-}
-
-//--------High order array methods
-//forEach - loops through them
-todos.forEach(function(theVariable) {
-    console.log(theVariable.text);
-    console.log(theVariable);
-    console.log(theVariable.id)
-}); 
-
-//map - create a new array from exisiting array
-const todoText = todos.map(function(theVariable) {
-    return theVariable.text;
-});
-    //we have created the new array todoText, by using return on all of the 'text' keys from todos.  We can see that by
-    //console logging todoText
-console.log(todoText);
-
-//filter - create a new array based on a condition
-const todoCompleted = todos.filter(function(theVariable) {
-    return theVariable.isCompleted === true;
-});
-    //We have created a new array that contains all of the objects that had the key 'isCompleted' === true
-console.log(todoCompleted);
-
-//you can pass multiple array methods at one time like below
-const todoCompletedText = todos.filter(function(theVariable) {
-    return theVariable.isCompleted === true;
-}).map(function(theVariable){
-    return theVariable.text;
-});
-    //now we have used both the filter and map methods on one array, this will return only the key 'text' from 
-    //the objects, and only the objects whos key 'isCompleted' was === true
-console.log(todoCompletedText);
