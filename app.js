@@ -1,46 +1,21 @@
-//-------------------------------CONDITIONALS----------------------------------
-
-//------if statements
-/* 
-const x = 10;
-
-if(x === 10) {
-    console.log('x is 10')
-} else if(x > 10) {
-    console.log('x is greater than 10')
-}else {
-    console.log('x is less than 10');
+//----------------------FUNCTIONS------------------------------------
+//Non-arrow functions
+function addNums(num1 = 1,num2 = 2) {
+    return num1 + num2;
 };
-*/
-/*
-const x = 4;
-const y = 10;
-if(x > 5 || y > 10) {
-    console.log('x is more than 5 or y is more than 10')
-} else {
-    console.log('x is less than 5 and y is less than 10')
+console.log(addNums(5,5)); 
+
+//Arrow Functions (released in es6 (es2015))
+const addNums2 = (num1 = 1, num2 = 1) => {
+    console.log(num1 + num2);
 }
-*/
+addNums2(5,6);
 
-/*---Ternary Statement 
-const x = 10;
-    // basically if x > 10, then(represented by the ?) color = red, else (represented by the :) color = blue
-const color = x > 10 ? 'red' : 'blue';
-console.log(color);
-*/
+    // As long as there is only one expression (num1 + num2), we don't actually need the {}
+const addNums3 = (num1 = 1, num2 = 1) => console.log(num1 + num2);
+addNums3(12,6); 
 
-//---Switches
-const x = 11;
-
-const color = x > 10 ? 'red' : 'blue';
-
-switch(color) {
-    case 'red':
-        console.log('color is red');
-        break;
-    case 'blue':
-        console.log('color is blue');
-        break;
-    default:
-        console.log('color is NOT red or blue');
-}
+    // If only a single parameter is set (num1 = 1, num2 = 1 (is two parameters, and they define 
+    // their value which stops this from working), you don't need the () surronding it
+const addNums4 = num1 => console.log(num1 + 5);
+addNums4(18);
